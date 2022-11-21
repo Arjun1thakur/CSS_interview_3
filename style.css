@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,500;1,200&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: #707070;
+}
+body{
+    text-align: center;
+}
+.flex{
+    display: flex;
+    align-items: center;
+}
+ul{
+    list-style-type: none;
+}
+.nav{
+    justify-content: space-around;
+    box-shadow: 0px 1px 8px #d8d8d8;
+}
+li{
+    padding: 1px 15px;
+}
+a{
+    text-decoration: unset;
+}
+.play_game{
+    margin-top: 350px;
+    font-size: 2rem;
+}
+.menu_li{
+    font-size: 14px;
+    cursor: pointer;
+}
+.profile{
+    display: inline-flex;
+    width: 100px;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    top: 3px;
+    color: rgb(122, 122, 255);
+    font-size: 15px;
+}
+.checkbox,.flex > i{
+    display: none;
+}
+.menu_li:hover,.menu_li i{
+    color: black;
+}
+.checkbox,.flex > i{
+    position: absolute;
+    right:32px;
+    height: 28px;
+    width: 28px;
+    opacity:0;
+    padding: 10px;
+    z-index: 99;
+}
+.flex > i{
+    opacity: 1;
+    font-size: 30px;
+    color: rgb(36, 145, 189);
+}
+.flex input[type="checkbox"]:checked ~ .hidden_menu{
+    display:block;
+}
+.hidden_menu{
+    position: absolute;
+    bottom: 0;
+    left: calc((100% - 70%)/2);
+    display: none;
+    z-index: 90;
+}
+.hidden_menu h1{
+    color: black;
+
+}
+.card{
+    padding: 20px;
+    border-radius: 5px;
+    line-height: 35px;
+    text-align: left;
+    box-shadow: 0px 1px 10px #c5c5c5;
+    position: absolute;
+    top: 60px;
+    background-color: white;
+    display: none;
+    font-size: 14px;
+}
+.menu_li:hover ~ .card{
+    display: block;
+}
+.card1{
+    padding: 20px;
+    border-radius: 5px;
+    line-height: 35px;
+    text-align: left;
+    box-shadow: 0px 1px 10px #c5c5c5;
+    position: absolute;
+    top: 60px;
+    left: 450px;
+    background-color: white;
+    display: none;
+    z-index: 9999;
+    font-size: 14px;
+}
+.programs:hover ~ .card1{
+    display: block;
+}
+
+.main{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.dj{
+    border-radius: 50%;
+    background-color: aliceblue;
+    width: 300px; height:300px;
+    position: absolute;
+    margin-left: calc((100vw - 300px)/2);
+    top: 20px;
+}
+.dj_hover{
+    margin: 20px;
+    text-align: center;
+    display: none;
+}
+.dj img:hover ~ .dj_hover{
+    display: block;
+}
+.race{
+    margin-top: 200px;
+    position: absolute;
+}
+.run{
+    width: 200px;
+    display: block;
+    margin: 50px 20px;
+}
+.car{
+    position: relative;
+    width: 200px;
+    display: block;
+    margin: 50px 20px;
+    animation: car 5s linear infinite;
+
+}
+.sub_car{
+    width: 200px;
+    margin: -10px 20px;
+
+}
+.wheel1{
+    position: absolute;
+    bottom: 0px;
+    left: 37px;
+    z-index: 2;
+    width: 35px;
+    height: 35px;
+    animation: wheel 1s linear infinite;
+}
+.wheel2{
+    position: absolute;
+    bottom: 0px;
+    left: 160px;
+    z-index: 2;
+    width: 35px;
+    height: 35px;
+    animation: wheel 1s linear infinite;
+}
+.arrow{
+    font-size: 1.5rem;
+    margin: 20px;
+}
+.arrow1{
+    top: 0;
+    position: absolute;
+    animation: down 3s linear infinite;
+}
+.arrow2{
+    bottom: 0;
+    position: absolute;
+    animation: right 3s linear infinite;
+}
+.arrow3{
+    right: 0;
+    top: 0;
+    position: absolute;
+    animation: left 3s linear infinite;
+}
+.arrow4{
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    animation: up 3s linear infinite;
+}
+@keyframes wheel{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);  
+    }  
+}
+
+@keyframes car{
+    from{
+        transform: translateX(0%);
+    }
+    to{
+        transform: translateX(550%);
+    }
+}
+@keyframes down{
+    100%{
+        transform: translateY(700px);
+    }
+}
+@keyframes right{
+    100%{
+        transform: translateX(700px);
+    }
+}
+@keyframes up{
+    100%{
+        transform: translateY(-700px);
+    }
+}
+@keyframes left{
+    100%{
+        transform: translateX(-700px);
+    }
+}
+
+
+
+@media (min-width:1200px) and (max-width:1300px){
+    li{
+        padding: 1px 8px;
+    }
+}
+@media (min-width:0px) and (max-width:1200px){
+    li{
+        display: none;
+    }
+    .checkbox,.flex i{
+        display:block;
+    }
+}
+
+
+
+
+
+
+
+/* class work */
+/* .grid{
+    display: grid;
+    grid-template-columns: repeat(5, 250px);
+    grid-template-rows: repeat(2,250px);
+    background-color: yellow;
+    border: 2px solid black;
+    gap: 20px;
+    border-radius: 5px;
+}
+.card{
+    background-color: black;
+    border: 2px solid black;
+} */
+
+/* .container{
+    margin: 20px auto;
+    padding: 15px;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 20px 30px;
+    background-color: rgb(193, 191, 186);
+    border-radius: 10px;
+  }
+  .elements{
+    padding: 10px 20px;
+    text-align: center;
+    background-color: rgb(30, 203, 84);
+    border-radius: 6px;
+    color: rgb(41, 42, 43);
+  } */
+
+  /* Mobile View */
+  @media screen and (min-width:250px) and (max-width:500px) {
+    .container{
+      grid-template-columns: repeat(1,1fr);
+    }
+  }
+
+   /* Tablet View */
+   @media screen and (min-width:500px) and (max-width:800px) {
+    .container{
+      grid-template-columns: repeat(3,1fr);
+    }
+  }
+   /* Laptop View */
+   @media screen and (min-width:800px) and (max-width:1100px) {
+    .container{
+      grid-template-columns: repeat(4,1fr);
+    }
+  }
